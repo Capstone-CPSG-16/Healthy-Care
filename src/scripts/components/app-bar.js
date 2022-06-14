@@ -16,11 +16,11 @@ class AppBar extends HTMLElement {
             <li><a href="#/home">Home</a></li>
             <li><a href="#/konsultasi">Konsultasi</a></li>
             <li><a href="#/rekomendasi">Rekomendasi</a></li>
-            <li><a target="_blank" rel="noopener" href="https://github.com/IqbalF16">About Us</a></li>
+            <li><a href="#/about-us">About Us</a></li>
           </ul>
         </nav>
     `;
   }
 }
 
-customElements.define('app-bar', AppBar);
+customElements.define("app-bar", AppBar);
