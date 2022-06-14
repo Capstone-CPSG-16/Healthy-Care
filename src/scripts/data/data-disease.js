@@ -1,3 +1,4 @@
+
 const penyakit = [
     {
         nama: 'Bufthalmus',

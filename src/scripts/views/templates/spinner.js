@@ -5,6 +5,7 @@ const Spinner = () => `
         <div class="spinner dua"></div>
         <div class="spinner tiga"></div>
         <div class="spinner empat"></div>
+        <div class="spinner lima"></div>
     </div>
     </center>
 `;

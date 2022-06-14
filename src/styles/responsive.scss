@@ -49,6 +49,19 @@
             }
         }
     }
+    main .container-welcome{
+        display: block;
+    }
+    .welcome .content-left img {
+        width: 0px;
+    }
+ 
+    .welcome .content-right {
+         margin: 0;
+         width: 100%;
+         text-align: center;
+    }
+   
 }
 
 /* Large devices */
