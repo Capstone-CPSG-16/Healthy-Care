@@ -17,6 +17,8 @@ const Favorite = {
       <div class="container-hasil" hidden>
           <h1>Hasil Diagnosis Penyakit</h1>
           <div class="info-penyakit">
+              <P>Gejala dipilih : <span id="gejala-dipilih"></span></P>
+              <p><span id="persen-hasil"></span> sesuai dengan <span id="hasil-sesuai"></span></p>
               <p>Info Penyakit : <span id="hasil-penyakit"></span></p>
               <p id="detail-penyakit"></p>
               
@@ -33,7 +35,6 @@ const Favorite = {
   },
 
   async afterRender() {
-    console.log(penyakit);
     const form = document.querySelector('#pemilihan-gejala');
     const submit = document.querySelector('#submit');
     const back = document.querySelector('.kembali');
@@ -43,72 +44,58 @@ const Favorite = {
 
     for (let i = 0; i < 23; i++) {
       form.innerHTML += `
-      <div class="card-gejala">
-          <input class="checkbox" type="checkbox" id="gejala${i+1}">
-          <label for="gejala${i+1}">${gejala[i]}</label>
-      </div>`
+    <div class="card-gejala">
+        <input class="checkbox" type="checkbox" id="gejala${i + 1}">
+        <label for="gejala${i + 1}">${gejala[i]}</label>
+    </div>`
     };
 
     form.addEventListener('change', () => {
       const checkbox = document.querySelectorAll('input');
-      for(let i = 0; i < checkbox.length; i++) {
-          if (checkbox[i].checked) {
-              submit.disabled = false;
-              break;
-          } else submit.disabled = true;
+      for (let i = 0; i < checkbox.length; i++) {
+        if (checkbox[i].checked) {
+          submit.disabled = false;
+          break;
+        } else submit.disabled = true;
       }
     });
 
-    submit.addEventListener('click', () => {    
-
+    submit.addEventListener('click', () => {
       const checkbox = document.querySelectorAll('input');
-      // const label = document.querySelectorAll('label');
-
-      for(let i = 0; i < checkbox.length; i++) {
-          if(checkbox[i].checked) {
-              gejalaDipilih.push(gejala[i]);
-          };
+      for (let i = 0; i < checkbox.length; i++) {
+        if (checkbox[i].checked) {
+          gejalaDipilih.push(gejala[i]);
+        };
       };
 
-      console.log(gejalaDipilih);
+      let mostSimilar = 0;
+      const findMostSimilar = penyakit.map((el, i) => ({ value: el.gejala.filter(gjl => gejalaDipilih.includes(gjl)).length, index: i }));
+      mostSimilar = Math.max(...findMostSimilar.map(el => el.value));
+      const filterMostSimilar = findMostSimilar.filter(el => el.value === mostSimilar);
+      const result = penyakit
+        .filter((el, i) => filterMostSimilar.map(el => el.index).includes(i))
+        .sort((a, b) => (a.gejala.length > b.gejala.length) ? 1 : ((b.gejala.length > a.gejala.length) ? -1 : 0))[0];
 
-      let validation = [];
-      penyakit.forEach(element => {
-        const descOrder1 = gejalaDipilih.sort( (a,b) => a > b ? 1 : -1 );
-        const descOrder2 = element.gejala.sort( (a,b) => a > b ? 1 : -1 );
-        
-        if (descOrder1.length == descOrder2.length) {
-            let increment = 0;
-            
-            descOrder2.forEach( el => {
-                if (el == descOrder1[increment]) {
-                    validation.push(true);
-                    if(validation.length == descOrder2.length){
-                        console.log(element.nama);
-                        document.querySelector('#hasil-penyakit').innerText = element.nama;
-                        document.querySelector('#detail-penyakit').innerText = element.info;
-                        document.querySelector('#saran').innerText = element.saran;
-                        return;
-                    } 
-                }
-                increment +=1;
-            })
-        }
-      });
-
-      if (document.querySelector('#hasil-penyakit').innerText == '') {
-        document.querySelector('#hasil-penyakit').innerText = 'Maaf kami tidak dapat menunjukkan hasil penyakit berdasarkan gejala yang anda pilih';
+      if (mostSimilar == result.gejala.length) {
+        document.querySelector('#persen-hasil').innerText = `${((mostSimilar / gejalaDipilih.length) * 100).toFixed(1)}%`;        
+      } else if (mostSimilar < result.gejala.length) {
+        document.querySelector('#persen-hasil').innerText = `${((mostSimilar / result.gejala.length) * 100).toFixed(1)}%`;
+      } else {
+        document.querySelector('#persen-hasil').innerText = `${((result.gejala.length / mostSimilar) * 100).toFixed(1)}%`;
       }
-      
+
+      document.querySelector('#gejala-dipilih').innerText = gejalaDipilih;
+      document.querySelector('#hasil-sesuai').innerText = `${result.nama} : ${result.gejala}`;
+      document.querySelector('#hasil-penyakit').innerText = result.nama;
+      document.querySelector('#detail-penyakit').innerText = result.info;
+      document.querySelector('#saran').innerText = result.saran;
+
       resetForm();
       hideGejala();
     });
 
     back.addEventListener('click', () => {
       showGejala();
-      document.querySelector('#hasil-penyakit').innerText = '';
-      document.querySelector('#detail-penyakit').innerText = '';
-      document.querySelector('#saran').innerText = '';
     })
 
     function resetForm() {
@@ -116,7 +103,7 @@ const Favorite = {
 
       gejalaDipilih = [];
       for (const i of checkbox) {
-          i.checked = false;
+        i.checked = false;
       }
     }
 
@@ -141,7 +128,7 @@ const Favorite = {
       const hasilPage = document.querySelector('.container-hasil');
       hasilPage.hidden = true;
 
-      document.querySelector('#submit').disabled = true;
+      submit.disabled = true;
     }
   },
 };
