@@ -1,4 +1,4 @@
-<p align="center"><a href="https://ranavid.netlify.app"  target="_blank"><img src="https://raw.githubusercontent.com/Capstone-CPSG-16/Healthy-Care/main/src/public/images/logo.png" width="290"></a></p>
+<p align="center"><a href="https://healthyandcare.netlify.app"  target="_blank"><img src="https://raw.githubusercontent.com/Capstone-CPSG-16/Healthy-Care/main/src/public/images/logo.png" width="290"></a></p>
 
 ##  Tentang Aplikasi
 Sidipem merupakan aplikasi web yang menyediakan informasi diagnosa penyakit mata, serta terdapat rekomendasi Rumah Sakit terdekat berdasarkan Kota/Kabupaten anda tinggal.
@@ -13,7 +13,7 @@ Sidipem merupakan aplikasi web yang menyediakan informasi diagnosa penyakit mata
 6.  Untuk menjalankan aplikasi dalam mode environment development ketikkan perintah
 `npm run start-dev`
 7.  Untuk menjalankan aplikasi dalam mode environtment production ketikkan perintah
-`npm run start-prod`
+`npm run build`
 
 ##  Fitur dalam Aplikasi
 -  [x] Menampilkan daftar rumah sakit.
