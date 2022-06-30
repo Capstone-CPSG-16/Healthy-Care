@@ -3,7 +3,7 @@
 ##  Tentang Aplikasi
 Sidipem merupakan aplikasi web yang menyediakan informasi diagnosa penyakit mata, serta terdapat rekomendasi Rumah Sakit terdekat berdasarkan Kota/Kabupaten anda tinggal.
 
-##  Langkah Install dan Menjalankan Aplikasi di Lokal 💻
+##  Langkah Install dan Menjalankan Aplikasi di Lokal
 1.  Install [Node.Js](https://nodejs.org/en/download/) dan [Git](https://git-scm.com/).
 2.  Clone repository ini
 `git clone https://github.com/Capstone-CPSG-16/Healthy-Care.git`
