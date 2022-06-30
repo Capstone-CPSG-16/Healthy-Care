@@ -37,7 +37,7 @@ class AppFooter extends HTMLElement {
             </div>
           </section>
           <section class="copy-right-text">
-            Copyright © 2022 - CPSG-16
+            ©2022 CPSG-16. All rights reserved
           </section>
         </footer>
       `;
