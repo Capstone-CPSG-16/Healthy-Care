@@ -55,9 +55,10 @@
     "whatwg-fetch": "^3.2.0"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.5",
-    "bootstrap": "^5.2.0-beta1",
     "@iconify/iconify": "^2.1.0",
+    "@popperjs/core": "^2.11.5",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.2.0-beta1",
     "idb": "^7.0.1",
     "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.13.5",

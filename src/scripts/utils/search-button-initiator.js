@@ -12,9 +12,9 @@ const SearchButtonInitiator = {
   },
   _renderButton() {
     this._buttonContainer.innerHTML = `
-      <button class="btn btn-danger btn-cari w-100" tabindex="0" id="btn-cari-rs">Cari 
+      <button class="btn btn-danger btn-cari w-100" tabindex="0" id="btn-cari-rs">
         <span class="iconify ml-2"data-icon="fa-solid:search" style="color: white;" data-width="15">
-        </span>
+        </span> Cari
       </button>
     `;
     const loading = document.querySelector('#loading');
@@ -26,6 +26,7 @@ const SearchButtonInitiator = {
       const selectCityElemVal = document.querySelector('#city').value;
 
       if (selectProvinceElemVal && selectCityElemVal) {
+        loading.style.display = 'block';
         loading.innerHTML = Spinner();
         const cardHasilElem = document.querySelector('.card-hasil');
         const hospitalsList = await HospitalSource.getHospitals(

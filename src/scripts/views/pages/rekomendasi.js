@@ -13,7 +13,7 @@ const Rekomendasi = {
       </section>
       <section class="hasil-pencarian">
         <div class="container">
-            <h2 class="heading-2 text-center" tabindex="0">Daftar Rumah Sakit</span></h2>
+            <h2 class="heading-2 fw-bold text-center" tabindex="0">Daftar Rumah Sakit</span></h2>
             <br>
             <div id="loading">
         

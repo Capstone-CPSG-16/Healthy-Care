@@ -9,17 +9,24 @@
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="favicon-1.png">
-    <!-- <link rel="stylesheet" href="style.css" type="text/css"> -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Healthy & Care</title>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <header>
         <app-bar class="app-bar"></app-bar>
     </header>
-    <main id="main-content" >
+    <main id="main-content" tabindex="0">
     </main>
-    <app-footer></app-footer>
+    <button id="btn-back-to-top" title="back to top" type="button">
+        <span class="iconify ml-2" data-icon="akar-icons:chevron-up" style="color: white; bottom: 15px;">
+        </span>
+    </button>
+    <app-footer style="min-height: 349px;"></app-footer>
 </body>
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </html>

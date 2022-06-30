@@ -88,7 +88,7 @@ header {
             background: none;
             border: none;
             font-size: 2rem;
-            color: $sixth-color;
+            color: $fifth-color;
             cursor: pointer;
         }
     }
@@ -97,8 +97,13 @@ header {
         display: flex;
         align-items: center;
 
+        img {
+            height: auto;
+            width: 100%;
+        }
+
         .navbar_brand {
-            padding: 10px;
+            padding: 10px 0;
             height: 60px;
             width: auto;
         }
@@ -106,18 +111,16 @@ header {
 
     .app-bar__navigation {
         position: absolute;
-        top: 60px;
+        top: 75px;
         right: 0;
         width: 0;
         transition: all 0.3s;
-        // padding: 10px 0 0 0;
-        // padding-top: 10px;
-        // padding-bottom: 8px;
         background-color: $primary-color;
         overflow: hidden;
         z-index: 1;
         font-weight: bold;
-        list-style-type: none; 
+        list-style-type: none;
+        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
     }
 
     .app-bar__navigation.open {
@@ -127,6 +130,7 @@ header {
         padding-left: 16px;
         font-size: 1rem;
         text-decoration: none;
+        border-radius: 0.375rem 0 0 0.375rem;
     }
 
     .app-bar__navigation ul {
@@ -247,7 +251,7 @@ main {
     }
 }
 
-// Rekomedasi
+// Rekomendasi
 
 search-bar-content {
 
@@ -283,82 +287,286 @@ search-bar-content {
     padding: 1rem;
     min-height: 58vh;
 
+    .col-12 {
+        padding: 1rem;
+    }
+
+    .heading-2 {
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 2rem;
+        margin-top: 1.5rem;
+        color: $fifth-color;
+        min-height: 44px;
+        font-size: 2rem;
+    }
+
     .btn-lokasi {
         min-height: 44px;
         padding: 10px;
     }
+
+    .card-rs {
+        box-shadow: 2px 2px 8px 2px rgb(179 175 175 / 75%);
+    }
 }
 
-#footer {
-    padding: 1.5rem;
-    display: flex;
-    font-family: "Poppins", sans-serif;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px -1px 0px 0px #00000033;
-    font-weight: bold;
-    background-color: $primary-color;
-    color: $fifth-color;
+// Footer
+footer {
+    .footer_top {
+        padding: 2rem 0;
+        
+        p {
+            color: $fifth-color;
+            margin-bottom: 1.5rem;
+        }
+
+        .row {
+            margin-top: 1.5rem;
+        }
+        
+        img {
+            width: auto;
+            height: 65px;
+            padding: 5px 0;
+            margin-bottom: 0.5rem;
+        }
+        h4 {
+            color: black;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        ul {
+            padding: 0;
+            margin-bottom: 1.5rem;
+            li {
+                list-style: none;
+                margin-bottom: 0.5rem;
+
+                a {
+                    color: $fifth-color;
+                    font-size: 1rem;
+                    padding: 1.25em 0;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .copy-right-text {
+        padding: 1.5rem;
+        display: flex;
+        font-family: "Poppins", sans-serif;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px -1px 0px 0px #00000033;
+        font-weight: bold;
+        background-color: $primary-color;
+        color: $fifth-color;
+    }
 }
+
 /// Home
-main .container-welcome{
-    display: flex;
-    margin-left: 80px;
+main {
+    .layanan, .feedback, .diagnosa, .pencarian-rs, .hasil-pencarian, .founder, .visi {
+        padding: 2rem 0;
+    }
+    .single_slider {
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .slider_info {
+            text-align: center;
+            h3 {
+                font-size: 20px;
+                line-height: normal;
+            }
+            .btn {
+                min-height: 44px;
+            }
+        }
+    }
+    .container{
+        
+        .welcome {
+            padding: 1rem;
+            .dokter_png {
+                position: relative;
+                right: 0;
+
+                img {
+                    width: 100%;
+                    }
+            }
+        }
+    }
+
+    .sidipem {
+        .welcome {
+            margin-top: 0rem;
+            margin-bottom: 10rem;
+            padding: 0 1rem;
+
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+    .layanan {
+        background-color: $primary-color;
+        .card {
+            box-shadow: 2px 2px 8px 2px rgb(179 175 175 / 75%);
+            position: relative;
+            overflow: hidden;
+            .card-info {
+                color: rgb(255, 255, 255);
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: $seventh-color;
+                padding: 1rem;
+                backdrop-filter: blur(1rem);
+                transform: translateY(101%);
+                transition: transform 0.3s ease-in;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        img {
+            height: auto;
+            width: 100%;
+        }
+
+        .card-body {
+            color: $primary-color;
+            background-color: #1687A7;
+        }
+
+        .card:hover {
+            .card-info {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    .feedback {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(63, 50, 50, 0.5)),url(../public/images/feedback.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        
+        .testimoni {
+            margin-top: 1.5rem;
+        }
+
+        .carousel-inner {
+            padding-bottom: 13rem;
+            box-sizing: inherit;
+
+            .feedback-quote {
+                height: 6rem;
+            }
+        }
+
+        .blockquote-footer {
+            color: white;
+        }
+    }
+
+    .diagnosa {
+        .col-12 {
+            padding: 1rem;
+        }
     
-}
-.container-welcome .content-left {
-    width: 45%;
-    padding-top: 60px;
+        .heading-2 {
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+            margin-bottom: 2rem;
+            margin-top: 1.5rem;
+            color: $fifth-color;
+            min-height: 44px;
+            font-size: 2rem;
+        }
+    }
+
+    .visi {
+        .col-12 {
+            padding: 1rem;
+        }
+    
+        .heading-2 {
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+            margin-bottom: 2rem;
+            margin-top: 1.5rem;
+            color: $fifth-color;
+            min-height: 44px;
+            font-size: 2rem;
+        }
+    }
+
+    .founder {
+        background-color: $primary-color;
+        .col-12 {
+            padding: 1rem;
+        }
+    
+        .heading-2 {
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+            margin-bottom: 2rem;
+            margin-top: 1.5rem;
+            color: $fifth-color;
+            min-height: 44px;
+            font-size: 2rem;
+        }
+
+        img {
+            height: auto;
+            width: 150px;
+            margin: auto;
+            border-radius: 50%;
+            filter: drop-shadow(3px 3px 3px rgb(43, 165, 236));
+        }
+    }
 }
 
-.container-welcome .content-right {
-    width: 55%;
-    padding-top: 100px;
-    width: 500px;
-    margin-left: 20px;
-}
 // konsultasi
-.containerKonsultasi{
-    width: 80%;
-    margin: 20px auto;
-    /* border: 1px solid black; */
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 2px 2px 8px 2px rgba(179,175,175,0.75);
-}
 
-.containerKonsultasi h1 {
-    text-align: center;
+#gejala-dipilih ,#persen-hasil, #hasil-sesuai {
+    font-weight: bold;
 }
 
 form {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
 }
 
 .card-gejala {
     padding: 20px;
-    background-color: rgb(32, 163, 163);
+    background-color: $seventh-color;
     color: white;
     margin: 5px;
-}
-
-input {
-    cursor: pointer;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
+    border-radius: 0.375rem;
+    box-shadow: 2px 2px 2px 2px rgb(179 175 175 / 75%);
 }
 
 .card-gejala label {
     display: inline;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
 label:hover {
-    color: black;
+    color: $secondary-color;
 }
 
 button#submit, .kembali {
@@ -366,50 +574,35 @@ button#submit, .kembali {
     font-size: 18px;
     margin: 10px auto;
     display: block;
-    background-color: rgb(32, 163, 163);
+    background-color: $seventh-color;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-}
-
-button:hover {
     color: white;
+    width: 97%;
 }
 
-.container-hasil {
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px 2px rgba(179,175,175,0.75);    
+button#submit:hover {
+    color: $secondary-color;
+    background-color: $fifth-color;
 }
 
-.container-hasil h1 {
-    text-align: center;
-    text-decoration: underline;
+button.kembali:hover {
+    color: $secondary-color;
+    background-color: $fifth-color;
 }
 
 span#hasil-penyakit {
     font-weight: bold;
 }
 
-@media screen and (max-width: 900px) {
-    form {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media screen and (max-width: 520px) {
-    form {
-        grid-template-columns: 1fr;
-    }
-}
-
   /* ABOUT */
 /* Visi Kami */
 
-.visi {
-    text-align: center;
-    padding: 50px;
-}
+// .visi {
+//     text-align: center;
+//     padding: 50px;
+// }
 
 .visi h1 {
     text-align: center;
@@ -420,9 +613,9 @@ span#hasil-penyakit {
 }
 
 .visi p {
-    font-family:  'Quicksand', sans-serif;
+    // font-family: "Poppins", "Quicksand", sans-serif;
     text-align: justify;
-    padding: 0px 20px 20px 20px;
+    // padding: 0px 20px 20px 20px;
 }
 
 .card-menu .card-input {
@@ -456,13 +649,13 @@ span#hasil-penyakit {
 }
 
 .founder h3 {
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Poppins", "Quicksand", sans-serif;
     color: #474260;
-    padding-top: 10px;
+    padding-top: 1rem;
 }
 
 .founder h5 {
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Poppins", "Quicksand", sans-serif;
     color: black;
 }
 .card-founder .card-input {
@@ -491,4 +684,25 @@ span#hasil-penyakit {
     border-radius: 50%;
     filter: drop-shadow(3px 3px 3px rgb(43, 165, 236));
 }
-/* END ABOUT */
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: -50px;
+    right: 15px;
+    // z-index: 9;
+    border: none;
+    outline: none;
+    background-color: $seventh-color;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: all 0.1s ease-in;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+#btn-back-to-top:hover,
+#btn-back-to-top:active {
+    background-color: $fifth-color;
+}
