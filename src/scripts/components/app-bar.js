@@ -6,7 +6,7 @@ class AppBar extends HTMLElement {
   render() {
     this.innerHTML = `
         <div class="app-bar__brand">
-        <a href="/"><img src="images/logo.png" class="navbar_brand" alt=""></a>
+        <a href="/"><img src="images/logo.png" width="123" height="60" class="navbar_brand" alt="logo_sidipem"></a>
         </div>
         <div class="app-bar__menu">
           <button id="menu-button" aria-label="navigation-menu">☰</button>
@@ -14,7 +14,7 @@ class AppBar extends HTMLElement {
         <nav id="navigationDrawer" class="app-bar__navigation">
           <ul>
             <li><a href="#/home">Home</a></li>
-            <li><a href="#/konsultasi">Konsultasi</a></li>
+            <li><a href="#/diagnosis">Diagnosis</a></li>
             <li><a href="#/rekomendasi">Rekomendasi</a></li>
             <li><a href="#/about-us">About Us</a></li>
           </ul>
@@ -23,4 +23,4 @@ class AppBar extends HTMLElement {
   }
 }
 
-customElements.define("app-bar", AppBar);
+customElements.define('app-bar', AppBar);
