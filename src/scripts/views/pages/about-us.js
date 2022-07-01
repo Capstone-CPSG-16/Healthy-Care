@@ -10,9 +10,7 @@ const About = {
                 <p data-aos="fade-up" data-aos-duration="1000">
                     Kesehatan mata merupakan hal yang wajib dijaga dan dirawat. 
                     Karena sangat berfungsi untuk melihat dan membantu menjalankan aktivitas keseharian. 
-                    Dengan perkembangan teknologi tim merancang sebuah website yang dapat mendiagnosa penyakit mata. 
-                    Dengan cara user menjawab pertanyaan yang muncul pada fitur konsultasi. 
-                    Solusi yang diberikan merupakan sebuah cara perawatan Kesehatan mata dan saran pengobatan sesuai keluhan. 
+                    Dengan perkembangan teknologi tim merancang sebuah website yang dapat mendiagnosa penyakit mata.
                     Tujuan dari tim membuat website ini untuk memudahkan masyarakat dalam mengambil Tindakan untuk melakukan pengobatan gejala penyakit yang dialami.
                 </p>
             </div>
